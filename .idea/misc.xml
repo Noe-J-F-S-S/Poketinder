@@ -3,8 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
+        <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/layout/activity_splash_poke_tinder.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/layout/alertdialog.xml" value="0.1" />
+        <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/layout/alertgialog.xml" value="0.1" />
+        <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/layout/item_back_button.xml" value="0.1" />
+        <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/layout/item_onboarding.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HALION/Desktop/4to_Ciclo/Programacion en moviles/5-/PokeTinder/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1135" />
       </map>
     </option>
