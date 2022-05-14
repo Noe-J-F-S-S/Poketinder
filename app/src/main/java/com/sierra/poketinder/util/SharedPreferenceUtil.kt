@@ -2,10 +2,9 @@ package com.sierra.poketinder.util
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.media.RouteDiscoveryPreference
 import android.util.Log
 import com.google.gson.Gson
-import com.sierra.poketinder.data.User
+import com.sierra.poketinder.data.model.User
 import java.lang.Exception
 
 class SharedPreferenceUtil {

@@ -1,6 +1,6 @@
 package com.sierra.poketinder.util
 
-import com.sierra.poketinder.data.Onboarding
+import com.sierra.poketinder.data.model.Onboarding
 
 class Mock {
     fun getOnboarding() = listOf(

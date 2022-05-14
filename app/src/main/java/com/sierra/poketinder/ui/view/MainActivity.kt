@@ -1,4 +1,4 @@
-package com.sierra.poketinder.activity
+package com.sierra.poketinder.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

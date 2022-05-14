@@ -1,4 +1,4 @@
-package com.sierra.poketinder.activity
+package com.sierra.poketinder.ui.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,8 +10,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.sierra.poketinder.R
-import com.sierra.poketinder.adapter.OnboardingAdapter
 import com.sierra.poketinder.databinding.ActivityOnboardingBinding
+import com.sierra.poketinder.ui.adapter.OnboardingAdapter
 import com.sierra.poketinder.util.Mock
 import com.sierra.poketinder.util.SharedPreferenceUtil
 
@@ -39,7 +39,7 @@ class OnboardingActivity : BaseActivity<ActivityOnboardingBinding>(ActivityOnboa
 
         binding.layBackButton.setOnClickListener {
             sharedPreferenceUtil.saveIntroShow()
-            startActivity(Intent(this,RegisterActivity::class.java))
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 

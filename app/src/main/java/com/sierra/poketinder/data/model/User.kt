@@ -1,4 +1,4 @@
-package com.sierra.poketinder.data
+package com.sierra.poketinder.data.model
 
 import android.provider.ContactsContract
 import java.io.Serializable

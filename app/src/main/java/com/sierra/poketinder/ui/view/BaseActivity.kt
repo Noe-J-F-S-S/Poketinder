@@ -1,10 +1,9 @@
-package com.sierra.poketinder.activity
+package com.sierra.poketinder.ui.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import java.util.prefs.PreferencesFactory
 
 abstract class BaseActivity<B : ViewBinding>(val bindingFactory: (LayoutInflater)->B): AppCompatActivity() {
 

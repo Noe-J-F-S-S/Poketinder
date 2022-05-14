@@ -1,4 +1,4 @@
-package com.sierra.poketinder.data
+package com.sierra.poketinder.data.model
 
 data class Onboarding (
     val id:Int,

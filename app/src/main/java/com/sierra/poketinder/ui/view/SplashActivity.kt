@@ -1,14 +1,13 @@
-package com.sierra.poketinder.activity
+package com.sierra.poketinder.ui.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.sierra.poketinder.data.Onboarding
 import com.sierra.poketinder.databinding.ActivitySplashBinding
 import com.sierra.poketinder.util.SharedPreferenceUtil
 
-class SplashActivity :BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
+class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
     private lateinit var sharedPreferenceUtil: SharedPreferenceUtil
     override fun onCreate(saveInstanceState: Bundle?) {
         super.onCreate(saveInstanceState)
@@ -21,9 +20,9 @@ class SplashActivity :BaseActivity<ActivitySplashBinding>(ActivitySplashBinding:
                 //Evaluar si mostrar intro o no
                 val isIntroAvailable = sharedPreferenceUtil.getIntroShow()
                 if(!isIntroAvailable){
-                    startActivity(Intent(this,OnboardingActivity::class.java))
+                    startActivity(Intent(this, OnboardingActivity::class.java))
                 }else{
-                    startActivity(Intent( this,LoginActivity::class.java))
+                    startActivity(Intent( this, LoginActivity::class.java))
                 }
                 finish()
             },
