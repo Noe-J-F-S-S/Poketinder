@@ -12,7 +12,6 @@ import com.sierra.poketinder.viewmodel.LoginViewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
     private lateinit var loginViewModel: LoginViewModel
-
     override fun onCreate(saveInstanceState: Bundle?) {
         super.onCreate(saveInstanceState)
         loginViewModel = LoginViewModel(this)
@@ -30,7 +29,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
             startActivity(intent)
         }
     }
-
     fun startLogin(view: View){
         loginViewModel.validateInputs(binding.edtEmail.text.toString(),
             binding.edtPassword.text.toString())
