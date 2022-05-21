@@ -1,7 +1,6 @@
-package com.sierra.poketinder.viewmodel
+package com.sierra.poketinder.ui.viewmodel
 
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sierra.poketinder.data.model.User

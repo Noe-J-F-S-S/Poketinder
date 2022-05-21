@@ -1,4 +1,4 @@
-package com.sierra.poketinder.viewmodel
+package com.sierra.poketinder.ui.viewmodel
 
 import android.content.Context
 

@@ -4,11 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.sierra.poketinder.data.model.User
 import com.sierra.poketinder.databinding.ActivityLoginBinding
-import com.sierra.poketinder.util.SharedPreferenceUtil
-import android.app.AlertDialog
-import com.sierra.poketinder.viewmodel.LoginViewModel
+import com.sierra.poketinder.ui.viewmodel.LoginViewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
     private lateinit var loginViewModel: LoginViewModel
