@@ -13,7 +13,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
         super.onCreate(saveInstanceState)
 
         sharedPreferenceUtil=SharedPreferenceUtil().also { SharedPreferenceUtil
-        it.setSharedPreference(this)
+            it.setSharedPreference(this)
         }
         Handler(Looper.getMainLooper()).postDelayed(
             {
@@ -29,8 +29,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
             3000//value in milliseconds
         )
     }
-
-
 }
 
 

@@ -5,4 +5,4 @@ data class Onboarding (
     val img:String,
     val namePokemon:String,
     val title: String
-        )
+)

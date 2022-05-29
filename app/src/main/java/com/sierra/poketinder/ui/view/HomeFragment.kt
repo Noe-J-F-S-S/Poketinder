@@ -1,55 +1,43 @@
 package com.sierra.poketinder.ui.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.LinearInterpolator
-import androidx.activity.viewModels
 import androidx.core.view.isVisible
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DefaultItemAnimator
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.sierra.poketinder.R
-import com.sierra.poketinder.databinding.ActivityMainBinding
+import com.sierra.poketinder.databinding.FragmentHomeBinding
 import com.sierra.poketinder.domain.model.Pokemon
 import com.sierra.poketinder.ui.adapter.PokemonAdapter
-import com.sierra.poketinder.ui.viewmodel.MainViewModel
+import com.sierra.poketinder.ui.viewmodel.HomeViewModel
 import com.yuyakaido.android.cardstackview.*
 import dagger.hilt.android.AndroidEntryPoint
-@AndroidEntryPoint
-class MainActivity :BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate){
-    override fun onCreate(saveInstanceState: Bundle?) {
-        super.onCreate(saveInstanceState)
-        val navView: BottomNavigationView =binding.navView
-        val navController = findNavController(R.id.nav_host_fragment)
-        navView.setupWithNavController(navController)
-    }
-}
-/*
-@AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate),
-    CardStackListener, PokemonAdapter.Callback {
 
-    private val mainViewModel: MainViewModel by viewModels()
+@AndroidEntryPoint
+class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate),
+    CardStackListener, PokemonAdapter.Callback{
+
+    companion object{
+        fun newInstance()=HomeFragment()
+    }
 
     private var listPokemon:List<Pokemon> = emptyList()
-
-    private val manager by lazy { CardStackLayoutManager(this, this) }
-
-    private val adapter by lazy { PokemonAdapter(listPokemon, this) }
+    private val homeViewModel: HomeViewModel by viewModels()
+    private val manager by lazy { CardStackLayoutManager(context,this) }
+    private val adapter by lazy {PokemonAdapter(listPokemon, this)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initializeTinderCard()
+        observeValues()
+        homeViewModel.onCreate()
+    }
 
-        mainViewModel.onCreate()
-
-        binding.floatingActionButton.setOnClickListener {
-            // Rewind
+    private fun observeValues(){
+        binding.floatingActionButton.setOnClickListener{
+            //Rewind
             val setting = RewindAnimationSetting.Builder()
                 .setDirection(Direction.Bottom)
                 .setDuration(Duration.Normal.duration)
@@ -59,8 +47,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             binding.rvTinderPokemon.rewind()
         }
 
-        binding.floatingActionButton2.setOnClickListener {
-            // Skip
+        binding.floatingActionButton2.setOnClickListener{
+            //Skip
             val setting = SwipeAnimationSetting.Builder()
                 .setDirection(Direction.Left)
                 .setDuration(Duration.Normal.duration)
@@ -70,8 +58,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             binding.rvTinderPokemon.swipe()
         }
 
-        binding.floatingActionButton3.setOnClickListener {
-            // Like
+        binding.floatingActionButton3.setOnClickListener{
+            //like
             val setting = SwipeAnimationSetting.Builder()
                 .setDirection(Direction.Right)
                 .setDuration(Duration.Normal.duration)
@@ -81,18 +69,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             binding.rvTinderPokemon.swipe()
         }
 
-        mainViewModel.isLoading.observe(this) {
+        homeViewModel.isLoading.observe(this){
             binding.progressBar.isVisible = it
         }
 
-        mainViewModel.pokemonList.observe(this) {
+        homeViewModel.pokemonList.observe(this){
             adapter.list = it
             adapter.notifyDataSetChanged()
-
             binding.floatingActionButton.visibility = View.VISIBLE
             binding.floatingActionButton2.visibility = View.VISIBLE
             binding.floatingActionButton3.visibility = View.VISIBLE
         }
+
     }
 
     private fun initializeTinderCard() {
@@ -108,6 +96,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual)
         manager.setOverlayInterpolator(LinearInterpolator())
 
+
         binding.rvTinderPokemon.layoutManager = manager
         binding.rvTinderPokemon.adapter = adapter
         binding.rvTinderPokemon.itemAnimator.apply {
@@ -116,20 +105,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             }
         }
     }
-
-    override fun onClickPokemonInformation(pokemon: Pokemon) {
+    override fun onClickPokemonInformation(pokemon: Pokemon){
     }
-    override fun onCardDragging(direction: Direction?, ratio: Float) {
+    override fun onCardDragging(direction: Direction?, ratio: Float){
     }
-    override fun onCardSwiped(direction: Direction?) {
+    override fun onCardSwiped(direction: Direction?){
     }
-    override fun onCardRewound() {
+    override fun onCardRewound(){
     }
-    override fun onCardCanceled() {
+    override fun onCardCanceled(){
     }
-    override fun onCardAppeared(view: View?, position: Int) {
+    override fun onCardAppeared(view: View?, position: Int){
     }
-    override fun onCardDisappeared(view: View?, position: Int) {
+    override fun onCardDisappeared(view: View?, position: Int){
     }
 }
-*/

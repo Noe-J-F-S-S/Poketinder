@@ -30,4 +30,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         loginViewModel.validateInputs(binding.edtEmail.text.toString(),
             binding.edtPassword.text.toString())
     }
+    fun registrar(view: View){
+        val intent =Intent(applicationContext,RegisterActivity::class.java)
+        startActivity(intent)
+    }
 }
