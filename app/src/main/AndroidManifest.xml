@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PokeTinderNew">
         <activity
+            android:name=".ui.view.PokemonDetailActivity"
+            android:exported="false"
+            />
+        <activity
             android:name=".ui.view.RegisterActivity"
             android:exported="false"
             />

@@ -1,4 +1,5 @@
 <resources>
     <color name="ic_launcher_background">#000000</color>
     <string name="app_name">PokeTinderNew</string>
+    <string name="textMock">mock</string>
 </resources>
