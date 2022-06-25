@@ -12,4 +12,6 @@ interface PokemonDao {
     suspend fun insert(pokemon: MyPokemonEntity)
     @Query("SELECT * FROM pokemon_table")
     suspend fun getAllPokemons():List<MyPokemonEntity>
+    @Query("DELETE FROM pokemon_table")
+    suspend fun deleteTable();
 }

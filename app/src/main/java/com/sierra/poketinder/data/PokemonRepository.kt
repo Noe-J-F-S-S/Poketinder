@@ -19,7 +19,6 @@ class PokemonRepository @Inject constructor(
         val listResponse: PokemonListModel = pokemonService.getPokemons()
         val response: List<PokemonModel> = listResponse.results
         return response.map { it.toDomain() }
-
     }
     suspend fun getPokemonDetailFromApi(idPokemon: String):PokemonDetailModel{
         return pokemonService.getPokemonById(idPokemon)
@@ -31,5 +30,8 @@ class PokemonRepository @Inject constructor(
     }
     suspend fun insertMyPokemon(myPokemon: MyPokemonEntity){
         pokemonDao.insert(myPokemon)
+    }
+    suspend fun deleteAllMyPokemon(){
+        pokemonDao.deleteTable()
     }
 }
